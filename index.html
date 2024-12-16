@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color vibe game</title>
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .colors {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .color-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .color-box:hover {
+            opacity: 0.8;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            display: none;
+        }
+        #messageDisplay {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>pick your color vibe!</h1>
+
+    <div class="colors">
+        <div class="color-box" style="background-color: #f8d7d3;" onclick="displayMessage('blush pink')"></div>
+        <div class="color-box" style="background-color: #e62e75;" onclick="displayMessage('hot pink')"></div>
+        <div class="color-box" style="background-color: #f4a6d1;" onclick="displayMessage('pastel pink')"></div>
+        <div class="color-box" style="background-color: #c3a2a9;" onclick="displayMessage('dusty rose pink')"></div>
+        <div class="color-box" style="background-color: #e10098;" onclick="displayMessage('magenta pink')"></div>
+        <div class="color-box" style="background-color: #ff00e6;" onclick="displayMessage('neon pink')"></div>
+    </div>
+
+    <div id="messageDisplay">
+        <p class="message" id="blush pink">
+            based on your timeline and profile, you have this calming presence that brings peace to the space around you. you're a quiet force, with a gentle nature that makes others feel at ease.
+        </p>
+        <p class="message" id="hot pink">
+            your timeline shows you're confident, always speaking your mind and sharing your thoughts with no filter. you have this bold energy that commands attention, and people can’t help but admire your unapologetic self.
+        </p>
+        <p class="message" id="pastel pink">
+            from the way you interact on your timeline, it’s clear you have a playful and dreamy side. you’re the type who brings lightness to the conversation, always adding a bit of fun and magic to your interactions.
+        </p>
+        <p class="message" id="dusty rose pink">
+            your profile shows that you have a natural elegance and maturity. you carry yourself with grace and speak with depth, showing wisdom beyond your years. there’s a timeless quality in the way you express yourself.
+        </p>
+        <p class="message" id="magenta pink">
+            based on your timeline, you always bring fresh ideas to the table. you have a creative mind that constantly explores new possibilities, and you’re never afraid to make a bold statement or think outside the box.
+        </p>
+        <p class="message" id="neon pink">
+            your profile and timeline give off the vibe that you're always on the move, ready for the next adventure. you’re someone who thrives on excitement, bringing energy and spontaneity wherever you go.
+        </p>
+    </div>
+</div>
+
+<script>
+    function displayMessage(color) {
+        // hide all messages
+        let allMessages = document.querySelectorAll('.message');
+        allMessages.forEach(function(message) {
+            message.style.display = 'none';
+        });
+
+        // show the selected message
+        let selectedMessage = document.getElementById(color);
+        selectedMessage.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
